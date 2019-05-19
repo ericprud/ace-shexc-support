@@ -1,0 +1,66 @@
+[[
+   "start",
+  ["storage.type","function"],
+  ["text"," "],
+  ["entity.name.function","foo"],
+  ["paren.lparen","("],
+  ["variable.parameter","items"],
+  ["punctuation.operator",", "],
+  ["variable.parameter","nada"],
+  ["paren.rparen",")"],
+  ["text"," "],
+  ["paren.lparen","{"]
+],[
+   "start",
+  ["text","    "],
+  ["keyword","for"],
+  ["text"," "],
+  ["paren.lparen","("],
+  ["storage.type","var"],
+  ["text"," "],
+  ["identifier","i"],
+  ["keyword.operator","="],
+  ["constant.numeric","0"],
+  ["punctuation.operator",";"],
+  ["text"," "],
+  ["identifier","i"],
+  ["keyword.operator","<"],
+  ["identifier","items"],
+  ["punctuation.operator","."],
+  ["support.constant","length"],
+  ["punctuation.operator",";"],
+  ["text"," "],
+  ["identifier","i"],
+  ["keyword.operator","++"],
+  ["paren.rparen",")"],
+  ["text"," "],
+  ["paren.lparen","{"]
+],[
+   "start",
+  ["text","        "],
+  ["support.function","alert"],
+  ["paren.lparen","("],
+  ["identifier","items"],
+  ["paren.lparen","["],
+  ["identifier","i"],
+  ["paren.rparen","]"],
+  ["text"," "],
+  ["keyword.operator","+"],
+  ["text"," "],
+  ["string","\"juhu"],
+  ["constant.language.escape","\\n"],
+  ["string","\""],
+  ["paren.rparen",")"],
+  ["punctuation.operator",";"]
+],[
+   "no_regex",
+  ["text","    "],
+  ["paren.rparen","}"],
+  ["text","\t"],
+  ["comment","// Real Tab."]
+],[
+   "no_regex",
+  ["paren.rparen","}"]
+],[
+   "no_regex"
+]]
