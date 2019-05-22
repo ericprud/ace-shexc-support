@@ -57,7 +57,7 @@
   ["text","    "],
   ["paren.rparen","}"],
   ["text","\t"],
-  ["comment","// Real Tab."]
+  ["comment","# Real Tab."]
 ],[
    "no_regex",
   ["paren.rparen","}"]
