@@ -7,13 +7,14 @@
  */
 
 PREFIX : <ij> PREFIX a: <kl>
-PREFIX b: <ab%3Acd\u003Aef\U0000003Agh>
+PREFIX b: <ab%3Acd\u003Aef\U0000003Aghij>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 IMPORT <mn>
 BASE <op>
 
- <#S0%3A> {
+ <#S0ab%3Acd\u003Aef\U0000003Aghij> {
   a.b:p\=1 {
-    $a:te1 <p> {
+    $a:te1 <p_ab%3Acd\u003Aef\U0000003Aghij> {
       a: xsd:integer OR [1 2]
     }
   } ;
