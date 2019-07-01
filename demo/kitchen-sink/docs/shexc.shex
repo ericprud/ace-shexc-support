@@ -6,14 +6,22 @@
 /** doc comment
  */
 
-PREFIX : <ij> PREFIX a: <kl>
-PREFIX b: <ab%3Acd\u003Aef\U0000003Aghij>
+PREFIX #single or
+/*multi-line
+comments*/: #any
+/**where*/<#except_here> PREFIX a: <kl>
+PREFIX a.b: <ab%3Acd\u003Aef\U0000003Aghij>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-IMPORT <mn>
-BASE <op>
+IMPORT #more
+<mn>
+BASE/*comments*/<op>
 
- <#S0ab%3Acd\u003Aef\U0000003Aghij> {
-  a.b:p\=1 {
+a.b:%3Acd\$ef\# {
+  <p1> ["ab\ncd\u003aef" /**asdf*/ a.b:1];
+  <p2> ['ab\ncd\u003aef']
+}
+<#S0ab%3Acd\u003Aef\U0000003Aghij> {
+  a.b:p\=1%3a {
     $a:te1 <p_ab%3Acd\u003Aef\U0000003Aghij> {
       a: xsd:integer OR [1 2]
     }
