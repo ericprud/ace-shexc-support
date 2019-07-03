@@ -1,3 +1,22 @@
+<s1> {
+  :p2 a:b
+}
+
+s1:		# 0-shapeExprDecl
+    {		# 0-tripleExpr
+  p3:   	# 1-shapeExprDecl
+      {         # 1-tripleExpr
+    p5:         # 2-shapeExprDecl
+        .       # 2-shapeExprDecl
+          ;     # 1-tripleExpr
+  }		# 1-shapeExprDecl
+    ;           # 0-tripleExpr
+  p4:           # 1-shapeExprDecl
+      .         # 1-shapeExprDecl
+        ;       # 0-tripleExpr
+}		# start
+
+PREFIX : <>
 # single line comment
 /* multi-line
  * comment
@@ -16,13 +35,23 @@ IMPORT #more
 <mn>
 BASE/*comments*/<op>
 
-a.b:%3Acd\$ef\# {
-  <p1> ["ab\ncd\u003aef" /**asdf*/ a.b:1];
-  <p2> ['ab\ncd\u003aef']
+<S1> .
+PREFIX : <>
+<S2> {}
+PREFIX : <>
+a.b:%3Acd\$ef\# /**asdf*/ {
+  <p1> ["ab\ncd\u003aef"^^xsd:string /**asdf*/ a.b:1];
+  :p2 ['ab\ncd\u003aef'@en-fr];
+  :p3 {
+    :p5 . ;
+  };
+  <p4> .;
 }
+PREFIX : <>
 <#S0ab%3Acd\u003Aef\U0000003Aghij> {
   a.b:p\=1%3a {
-    $a:te1 <p_ab%3Acd\u003Aef\U0000003Aghij> {
+    # $a:te1
+    <p_ab%3Acd\u003Aef\U0000003Aghij> {
       a: xsd:integer OR [1 2]
     }
   } ;
