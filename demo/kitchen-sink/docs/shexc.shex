@@ -1,28 +1,19 @@
-<s1> {
-  :p2 a:b
+<s> {
+  <p>
+  <dt>
+  //
+  <p1>
+  "asdf"
+  ;
 }
 
-s1:		# 0-shapeExprDecl
-    {		# 0-tripleExpr
-  p3:   	# 1-shapeExprDecl
-      {         # 1-tripleExpr
-    p5:         # 2-shapeExprDecl
-        .       # 2-shapeExprDecl
-          ;     # 1-tripleExpr
-  }		# 1-shapeExprDecl
-    ;           # 0-tripleExpr
-  p4:           # 1-shapeExprDecl
-      .         # 1-shapeExprDecl
-        ;       # 0-tripleExpr
-}		# start
-
-PREFIX : <>
 # single line comment
 /* multi-line
  * comment
  */
 
 /** doc comment
+ * TODO: show off highlighting
  */
 
 PREFIX #single or
@@ -34,6 +25,32 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 IMPORT #more
 <mn>
 BASE/*comments*/<op>
+
+a:S1 @<#S2> AND (@a:S3 OR
+ # EXTENDS @<#S2>
+ EXTRA <p> a:p2 CLOSED {
+  <p> @<#S3> OR NOT {
+    a:p2 /as\/\.df/ OR {
+      &<te1> ;
+      :p3 @:S3 // a:p1 "asdf" // <p2> 'fdsa' ;
+    } OR xsd:byte /* OR . */
+  }
+})
+
+<#S0ab%3Acd\u003Aef\U0000003Aghij> {
+  a.b:p\=1%3a {
+    $a:te1
+    <p_ab%3Acd\u003Aef\U0000003Aghij> {
+      a: xsd:integer OR [1 2]
+    }
+  } ;
+ /* }      A multi-line comment doesn't
+    }      close this shape,
+ */
+  # }      nor does a single-line,
+  : a:b  # as seen by highlighting here
+}        # and class=hljs-title on the
+         # followingprefixed name:
 
 <S1> .
 PREFIX : <>
@@ -48,27 +65,22 @@ a.b:%3Acd\$ef\# /**asdf*/ {
   <p4> .;
 }
 PREFIX : <>
-<#S0ab%3Acd\u003Aef\U0000003Aghij> {
-  a.b:p\=1%3a {
-    # $a:te1
-    <p_ab%3Acd\u003Aef\U0000003Aghij> {
-      a: xsd:integer OR [1 2]
-    }
-  } ;
- /* }      A multi-line comment doesn't
-    }      close this shape,
- */
-  # }      nor does a single-line,
-  : a:b  # as seen by highlighting here
-}        # and class=hljs-title on the
-         # followingprefixed name:
-a:S1 @<#S2> AND (@a:S3 OR
- # EXTENDS @<#S2>
- EXTRA <p> a:p2 CLOSED {
-  <p> @<#S3> OR NOT {
-    a:p2 /as\/\.df/ OR {
-      &<te1> ;
-      :p3 @:S3
-    } OR xsd:byte /* OR . */
-  }
-})
+
+<s1> {
+  :p2 a:b
+}
+
+:s1		# 0-shapeExprDecl
+    {		# 0-tripleExpr
+  :p3   	# 1-shapeExprDecl
+      {         # 1-tripleExpr
+    :p5         # 2-shapeExprDecl
+        .       # 2-shapeExprDecl
+          ;     # 1-tripleExpr
+  }		# 1-shapeExprDecl
+    ;           # 0-tripleExpr
+  :p4           # 1-shapeExprDecl
+      .         # 1-shapeExprDecl
+        ;       # 0-tripleExpr
+}		# start
+
