@@ -1,13 +1,5 @@
-<s> {
-  <p>
-  <dt>
-  //
-  <p1>
-  "asdf"
-  ;
-}
-
 # single line comment
+
 /* multi-line
  * comment
  */
