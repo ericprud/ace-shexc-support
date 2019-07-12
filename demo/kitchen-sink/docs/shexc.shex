@@ -1,54 +1,56 @@
-PREFIX a: <>
-<label1a> extra a:b <p> { }
+#  ShExC (see <http://shex.io/>) has single line comments,
 
-<label1b> . AND ({})
+/* multi-line comments,
+ */
 
-<label1c> . AND (CLOSED {})
+/** and doc-style comments.
+ * @note This comment mode highlights words starting with '@'
+ * and the words: "TODO, FIXME, XXX and HACK".
+ */
 
-<label3> (@<label1> and (<dt> or <dt>))
-<label1> @<label2> AND .
-<label2> <dt> and <dt>
-<label4> {}
+#  ShExC has PREFIX and BASE directives like SPARQL:
+PREFIX my: <http://my.example/schema#>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
+PrEfIx xsd: <http://www.w3.org/2001/XMLSchema#>
+BASE<someRelativeURL>PREFIX :<>PREFIX a:<#>
+PREFIX привет-नमस्ते: <something\u003Awith\U0000003Aescapes>
 
-<S> {
-  <p> <dt> ;
+# IMPORT references some external schema file by relative URL:
+IMPORT <otherSchema>
+
+PREFIX # Single or
+/*       multi-line
+         comments*/ ex:
+       # can appear
+/**      anywhere */<#except_in_IRIs>
+# (The PREFIX 'ex:' is now bound to <#except_in_IRIs>.)
+
+# Simple ShEx shape declarations start with a shapeExprLabel:
+my:IssueShape {
+  # and some TripleConstraints separated by ';':
+  ex:state [ex:unassigned ex:assigned];
+  ex:reportedBy @my:UserShape # '@' signifies a shapeExprRef to another shape.
 }
-OR
-<dt>
 
-# single line comment
+my:UserShape {
+  # A TripleExpression may be preceded by a tripleExprLabel:
+  $my:nameAndMbox (
+    # An '&' indicates a tripleExprRef (AKA an "inclusion").
+    &my:org;
+    # TripleConstraints may be followed by annotations:
+    foaf:name xsd:string MinLength 10
+      // my:label "name of someone who reported an issue"
+      // my:added "2019-07-12"^^xsd:date
+    ;
+    foaf:mbox IRI+
+  )
+}
 
-/* multi-line
- * comment
- */
-
-/** doc comment
- * TODO: show off highlighting
- */
-
-PREFIX #single or
-/*multi-line
-comments*/: #any
-/**where*/<#except_here> PREFIX a: <kl>
-PREFIX a.b: <ab%3Acd\u003Aef\U0000003Aghij>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-IMPORT #more
-<mn>
-BASE/*comments*/<op>
-
-a:S1 @<#S2> AND (@a:S3 OR
- # EXTENDS @<#S2>
- EXTRA <p> a:p2 CLOSED {
-  <p> @<#S3> OR NOT {
-    a:p2 /as\/\.df/ OR {
-      &<te1> ;
-      :p3 @:S3 // a:p1 "asdf" // <p2> 'fdsa' ;
-    } OR xsd:byte /* OR . */
-  }
-})
+# Following are some stress-tests for the Ace ShExC mode which illustrate the
+# markup:
 
 <#S0ab%3Acd\u003Aef\U0000003Aghij> {
-  a.b:p\=1%3a {
+  привет-नमस्ते:p\=1%3a {
     $a:te1
     <p_ab%3Acd\u003Aef\U0000003Aghij> {
       a: xsd:integer OR [1 2]
@@ -59,16 +61,30 @@ a:S1 @<#S2> AND (@a:S3 OR
  */
   # }      nor does a single-line,
   : a:b  # as seen by highlighting here
-}        # and class=hljs-title on the
-         # followingprefixed name:
+}        # and class=shapeExprLabel on
+         # the following prefixed name:
+
+a:S1 @<#S2> AND (@a:S3 OR
+ # EXTENDS @<#S2>
+ EXTRA <p> a:p2 CLOSED {
+  <p> @<#S3> OR NOT {
+    a:p2 /as\/\.df/ OR {
+      &<te1> ;
+      :p3 @:S3
+        // a:p1 "asdf"
+        // <p2> 'fdsa' ;
+      (:p4 . // a:p4 "asdf")
+    } OR xsd:byte /* OR . */
+  } // <a> <v> // <a2> <v2>
+})
 
 <S1> .
 PREFIX : <>
 <S2> {}
 PREFIX : <>
-a.b:%3Acd\$ef\# /**asdf*/ {
-  <p1> ["ab\ncd\u003aef"^^xsd:string /**asdf*/ a.b:1];
-  :p2 ['ab\ncd\u003aef'@en-fr];
+привет-नमस्ते:%3Acd\$ef\# /**asdf*/ {
+  <p1> ["ab\ncd\u003aef"^^xsd:string /**asdf*/ привет-नमस्ते:1];
+  :p2 ['ab\ncd\u003aef'@en-fr ''^^<>];
   :p3 {
     :p5 . ;
   };
@@ -76,21 +92,6 @@ a.b:%3Acd\$ef\# /**asdf*/ {
 }
 PREFIX : <>
 
-<s1> {
-  :p2 a:b
-}
-
-:s1		# 0-shapeExprDecl
-    {		# 0-tripleExpr
-  :p3   	# 1-shapeExprDecl
-      {         # 1-tripleExpr
-    :p5         # 2-shapeExprDecl
-        .       # 2-shapeExprDecl
-          ;     # 1-tripleExpr
-  }		# 1-shapeExprDecl
-    ;           # 0-tripleExpr
-  :p4           # 1-shapeExprDecl
-      .         # 1-shapeExprDecl
-        ;       # 0-tripleExpr
-}		# start
-
+<label1> (@<label1> and (<dt> or <dt>))
+<label2> @<label2> AND .
+<label3> <dt> and <dt>
