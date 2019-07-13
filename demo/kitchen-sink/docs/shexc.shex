@@ -13,7 +13,7 @@ PREFIX my: <http://my.example/schema#>
 prefix foaf: <http://xmlns.com/foaf/0.1/>
 PrEfIx xsd: <http://www.w3.org/2001/XMLSchema#>
 BASE<someRelativeURL>PREFIX :<>PREFIX a:<#>
-PREFIX привет-नमस्ते: <something\u003Awith\U0000003Aescapes>
+PREFIX привет-नमस्ते: <something\u003Awith\U0000003Aescapes%3A>
 
 # IMPORT references some external schema file by relative URL:
 IMPORT <otherSchema>
@@ -32,7 +32,7 @@ my:IssueShape {
   ex:reportedBy @my:UserShape # '@' signifies a shapeExprRef to another shape.
 }
 
-my:UserShape {
+my:UserShape /https?:\/\// and {
   # A TripleExpression may be preceded by a tripleExprLabel:
   $my:nameAndMbox (
     # An '&' indicates a tripleExprRef (AKA an "inclusion").
@@ -42,20 +42,25 @@ my:UserShape {
       // my:label "name of someone who reported an issue"
       // my:added "2019-07-12"^^xsd:date
     ;
-    foaf:mbox IRI+
+    foaf:mbox IRI /^mailto:@/+
   )
-}
+} // my:label ""
+
+# Value sets may contain RDF literals:
+<vs1> [1 2.2 3.4E5 true false "a" "ab"^^my:bloodType "c"^^<dt> "hi"@en-Latn-US]
+<vs2> ["code"~ - "codeRED" - "codeBLUE"] OR [. - "co"~]
+
+# , IRIs:
+<vs3> [<IRI1> xsd:~ - xsd:byte] AND [. - <IRI2> привет-नमस्ते:p\=1%3a]
+
+# , BCP-47 language codes:
+<vs4> [@en~ - @en-FR - @en-ES] OR [. - @en~ - @fr]
 
 # Following are some stress-tests for the Ace ShExC mode which illustrate the
 # markup:
 
-<#S0ab%3Acd\u003Aef\U0000003Aghij> {
-  привет-नमस्ते:p\=1%3a {
-    $a:te1
-    <p_ab%3Acd\u003Aef\U0000003Aghij> {
-      a: xsd:integer OR [1 2]
-    }
-  } ;
+# Comments test
+<#S1> {
  /* }      A multi-line comment doesn't
     }      close this shape,
  */
@@ -64,24 +69,7 @@ my:UserShape {
 }        # and class=shapeExprLabel on
          # the following prefixed name:
 
-a:S1 @<#S2> AND (@a:S3 OR
- # EXTENDS @<#S2>
- EXTRA <p> a:p2 CLOSED {
-  <p> @<#S3> OR NOT {
-    a:p2 /as\/\.df/ OR {
-      &<te1> ;
-      :p3 @:S3
-        // a:p1 "asdf"
-        // <p2> 'fdsa' ;
-      (:p4 . // a:p4 "asdf")
-    } OR xsd:byte /* OR . */
-  } // <a> <v> // <a2> <v2>
-})
-
-<S1> .
-PREFIX : <>
-<S2> {}
-PREFIX : <>
+# Escape tests:
 привет-नमस्ते:%3Acd\$ef\# /**asdf*/ {
   <p1> ["ab\ncd\u003aef"^^xsd:string /**asdf*/ привет-नमस्ते:1];
   :p2 ['ab\ncd\u003aef'@en-fr ''^^<>];
@@ -90,8 +78,21 @@ PREFIX : <>
   };
   <p4> .;
 }
-PREFIX : <>
 
+# Misc embeddings:
+a:S2 @<#S2> AND (@a:S3 OR
+ # EXTENDS @<#S2>
+ EXTRA <p> a:p2 CLOSED {
+  <p> @<#S3> OR NOT {
+    a:p2 /as\/\.df/ OR {
+      &<te1> ;
+      :p3 @:S3 ;
+      (:p4 . // a:p4 "asdf")
+    } OR xsd:byte OR .
+  }
+})
+
+# ANDs, ORs, NOTs and ()s:
 <label1> (@<label1> and (<dt> or <dt>))
 <label2> @<label2> AND .
 <label3> <dt> and <dt>
