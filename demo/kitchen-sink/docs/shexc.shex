@@ -32,7 +32,7 @@ my:IssueShape {
   ex:reportedBy @my:UserShape # '@' signifies a shapeExprRef to another shape.
 }
 
-my:UserShape /https?:\/\// and {
+my:UserShape /https?:\/\// {
   # A TripleExpression may be preceded by a tripleExprLabel:
   $my:nameAndMbox (
     # An '&' indicates a tripleExprRef (AKA an "inclusion").
