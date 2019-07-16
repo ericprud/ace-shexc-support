@@ -29,12 +29,13 @@ PREFIX # Single or
 my:IssueShape {
   # and some TripleConstraints separated by ';':
   ex:state [ex:unassigned ex:assigned];
-  ex:reportedBy @my:UserShape # '@' signifies a shapeExprRef to another shape.
+  # '@' signifies a shapeExprRef to another shape.
+  ex:reportedBy @my:UserShape
 }
 
 my:UserShape /https?:\/\// {
   # A TripleExpression may be preceded by a tripleExprLabel:
-  $my:nameAndMbox (
+  $my:userProperties (
     # An '&' indicates a tripleExprRef (AKA an "inclusion").
     &my:org;
     # TripleConstraints may be followed by annotations:
