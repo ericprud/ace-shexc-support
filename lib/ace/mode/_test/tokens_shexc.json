@@ -1,53 +1,228 @@
 [[
-   "start",
-  ["identifier","function"],
-  ["text"," "],
-  ["identifier","foo"],
-  ["paren.lparen","("],
-  ["identifier","items"],
-  ["text",", "],
-  ["identifier","nada"],
-  ["paren.rparen",")"],
-  ["text"," "],
-  ["paren.lparen","{"]
+   "shexDoc",
+  ["comment","# single line comment"]
 ],[
-   "start",
-  ["text","    "],
-  ["identifier","for"],
-  ["text"," "],
-  ["paren.lparen","("],
-  ["identifier","var"],
-  ["text"," "],
-  ["identifier","i"],
-  ["text","="],
-  ["constant.numeric","0"],
-  ["text","; "],
-  ["identifier","i"],
-  ["constant.language","<items.length; i++) {"]
+   ["comment","shexDoc"],
+  ["comment","/* multi-line"]
+],[
+   ["comment","shexDoc"],
+  ["comment"," * comment"]
 ],[
    "shexDoc",
-  ["text","        "],
-  ["support.function","alert"],
-  ["paren.lparen","("],
-  ["identifier","items"],
-  ["paren.lparen","["],
-  ["identifier","i"],
-  ["paren.rparen","]"],
-  ["text"," + "],
-  ["string","\"juhu"],
-  ["constant.language.escape","\\n"],
-  ["string","\""],
-  ["paren.rparen",")"],
-  ["text",";"]
+  ["comment"," */"]
+],[
+   "shexDoc"
+],[
+   ["comment.doc","shexDoc"],
+  ["comment.doc","/** doc comment"]
 ],[
    "shexDoc",
-  ["text","    "],
-  ["paren.rparen","}"],
-  ["text","\t"],
-  ["comment","# Real Tab."]
+  ["comment.doc"," */"]
+],[
+   "shexDoc"
 ],[
    "shexDoc",
-  ["paren.rparen","}"]
+  ["keyword","PREFIX"],
+  ["whiteSpace"," "],
+  ["constant.library",":"],
+  ["whiteSpace"," "],
+  ["constant.language","<ij>"],
+  ["whiteSpace"," "],
+  ["keyword","PREFIX"],
+  ["whiteSpace"," "],
+  ["constant.library","a:"],
+  ["whiteSpace"," "],
+  ["constant.language","<kl>"]
+],[
+   "shexDoc",
+  ["keyword","PREFIX"],
+  ["whiteSpace"," "],
+  ["constant.library","b:"],
+  ["whiteSpace"," "],
+  ["constant.language","<ab%3Acd"],
+  ["constant.language.escape","\\u003A"],
+  ["constant.language","ef"],
+  ["constant.language.escape","\\U0000003A"],
+  ["constant.language","gh>"]
+],[
+   "shexDoc",
+  ["keyword","IMPORT"],
+  ["whiteSpace"," "],
+  ["constant.language","<mn>"]
+],[
+   "shexDoc",
+  ["keyword","BASE"],
+  ["whiteSpace"," "],
+  ["constant.language","<op>"]
+],[
+   "shexDoc"
+],[
+   ["#tmp","tripleExpression","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
+  ["whiteSpace"," "],
+  ["constant.language.function.shapeExprLabel","<#S0%3A>"],
+  ["whiteSpace"," "],
+  ["lcurly","{"]
+],[
+   ["#tmp","tripleExpression","shape","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
+  ["whiteSpace","  "],
+  ["constant.library.atom.predicate","a.b:"],
+  ["variable.atom.predicate","p"],
+  ["variable.atom.predicate.escape","\\="],
+  ["variable.atom.predicate","1"],
+  ["whiteSpace"," "],
+  ["lcurly","{"]
+],[
+   ["#tmp","tripleExpression","shape","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
+  ["whiteSpace","    "],
+  ["operator","$"],
+  ["constant.library.atom.tripleExprLabel","a:"],
+  ["variable.atom.tripleExprLabel","te1"],
+  ["whiteSpace"," "],
+  ["constant.language.atom.predicate","<p>"],
+  ["whiteSpace"," "],
+  ["lcurly","{"]
+],[
+   ["#tmp","xsFacetStar","litNodeConstraint","andOrOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
+  ["whiteSpace","      "],
+  ["constant.library.atom.predicate","a:"],
+  ["whiteSpace"," "],
+  ["constant.library.atom.datatype","xsd:"],
+  ["variable.atom.datatype","integer"],
+  ["whiteSpace"," "],
+  ["keyword","OR"],
+  ["whiteSpace"," "],
+  ["operator","["],
+  ["constant","1"],
+  ["whiteSpace"," "],
+  ["constant","2"],
+  ["operator","]"]
+],[
+   ["#tmp","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
+  ["whiteSpace","    "],
+  ["rcurly","}"]
+],[
+   ["#tmp","orOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
+  ["whiteSpace","  "],
+  ["rcurly","}"],
+  ["whiteSpace"," "],
+  ["operator",";"]
+],[
+   ["comment86","orOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
+  ["whiteSpace"," "],
+  ["comment","/* }      A multi-line comment doesn't"]
+],[
+   ["comment86","orOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
+  ["comment","    }      close this shape,"]
+],[
+   ["#tmp","orOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
+  ["comment"," */"]
+],[
+   ["#tmp","orOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
+  ["whiteSpace","  "],
+  ["comment","# }      nor does a single-line,"]
+],[
+   ["#tmp","xsFacetStar","litNodeConstraint","andOrOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
+  ["whiteSpace","  "],
+  ["constant.library.atom.predicate",":"],
+  ["whiteSpace"," "],
+  ["constant.library.atom.datatype","a:"],
+  ["variable.atom.datatype","b"],
+  ["whiteSpace","  "],
+  ["comment","# as seen by highlighting here"]
+],[
+   ["#tmp","andOrOpt","shapeNot","shexDoc"],
+  ["rcurly","}"],
+  ["whiteSpace","        "],
+  ["comment","# and class=hljs-title on the"]
+],[
+   ["#tmp","andOrOpt","shapeNot","shexDoc"],
+  ["whiteSpace","         "],
+  ["comment","# followingprefixed name:"]
+],[
+   ["nested_shapeNot","andOrOpt","shapeNot","shexDoc"],
+  ["constant.library.function.shapeExprLabel","a:"],
+  ["variable.function.shapeExprLabel","S1"],
+  ["whiteSpace"," "],
+  ["operator","@"],
+  ["constant.language.atom.shapeExprRef","<#S2>"],
+  ["whiteSpace"," "],
+  ["keyword","AND"],
+  ["whiteSpace"," "],
+  ["lparen","("],
+  ["operator","@"],
+  ["constant.library.atom.shapeExprRef","a:"],
+  ["variable.atom.shapeExprRef","S3"],
+  ["whiteSpace"," "],
+  ["keyword","OR"]
+],[
+   ["#tmp","nested_andOrOpt","nested_shapeNot","andOrOpt","shapeNot","shexDoc"],
+  ["whiteSpace"," "],
+  ["invalid","EXTENDS"],
+  ["whiteSpace"," "],
+  ["operator","@"],
+  ["constant.language.atom.shapeExprRef","<#S2>"],
+  ["whiteSpace"," "],
+  ["invalid","EXTRA"],
+  ["whiteSpace"," "],
+  ["invalid","<p>"],
+  ["whiteSpace"," "],
+  ["invalid","a:p2"],
+  ["whiteSpace"," "],
+  ["invalid","CLOSED"],
+  ["whiteSpace"," "],
+  ["invalid","{"]
+],[
+   ["#tmp","nested_andOrOpt","nested_shapeNot","andOrOpt","shapeNot","shexDoc"],
+  ["whiteSpace","  "],
+  ["invalid","<p>"],
+  ["whiteSpace"," "],
+  ["invalid","@<"],
+  ["comment","#S3> OR NOT {"]
+],[
+   ["#tmp","tripleExpression","shape","nested_nonLitNodeConstraintOpt","nested_shapeNot","andOrOpt","shapeNot","shexDoc"],
+  ["whiteSpace","    "],
+  ["invalid","a:p2"],
+  ["whiteSpace"," "],
+  ["invalid","/as\\/\\.df/"],
+  ["whiteSpace"," "],
+  ["keyword","OR"],
+  ["whiteSpace"," "],
+  ["lcurly","{"]
+],[
+   ["#tmp","orOpt","shape","nested_nonLitNodeConstraintOpt","nested_shapeNot","andOrOpt","shapeNot","shexDoc"],
+  ["whiteSpace","      "],
+  ["operator","&"],
+  ["constant.language.atom.tripleExprRef","<te1>"],
+  ["whiteSpace"," "],
+  ["operator",";"]
+],[
+   ["#tmp","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nested_nonLitNodeConstraintOpt","nested_shapeNot","andOrOpt","shapeNot","shexDoc"],
+  ["whiteSpace","      "],
+  ["constant.library.atom.predicate",":"],
+  ["variable.atom.predicate","p3"],
+  ["whiteSpace"," "],
+  ["operator","@"],
+  ["constant.library.atom.shapeExprRef",":"],
+  ["variable.atom.shapeExprRef","S3"]
+],[
+   ["#tmp","nested_xsFacetStar","nested_litNodeConstraint","nested_andOrOpt","nested_shapeNot","andOrOpt","shapeNot","shexDoc"],
+  ["whiteSpace","    "],
+  ["rcurly","}"],
+  ["whiteSpace"," "],
+  ["keyword","OR"],
+  ["whiteSpace"," "],
+  ["constant.library.atom.datatype","xsd:"],
+  ["variable.atom.datatype","byte"],
+  ["whiteSpace"," "],
+  ["comment","/* OR . */"]
+],[
+   ["#tmp","nested_andOrOpt","nested_shapeNot","andOrOpt","shapeNot","shexDoc"],
+  ["whiteSpace","  "],
+  ["invalid","}"]
+],[
+   ["#tmp","andOrOpt","shapeNot","shexDoc"],
+  ["invalid","}"],
+  ["rparen",")"]
 ],[
    "shexDoc"
 ]]
