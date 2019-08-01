@@ -33,7 +33,7 @@ my:IssueShape {
   ex:reportedBy @my:UserShape
 }
 
-my:UserShape /https?:\/\// {
+my:UserShape /https?:\/\/[a-z]/mix {
   # A TripleExpression may be preceded by a tripleExprLabel:
   $my:userProperties (
     # An '&' indicates a tripleExprRef (AKA an "inclusion").
@@ -57,8 +57,7 @@ my:UserShape /https?:\/\// {
 # , BCP-47 language codes:
 <vs4> [@en~ - @en-FR - @en-ES] OR [. - @en~ - @fr]
 
-# Following are some stress-tests for the Ace ShExC mode which illustrate the
-# markup:
+# The following ShExC mode stress-tests illustrate the markup:
 
 # Comments test
 <#S1> {
