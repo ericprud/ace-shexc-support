@@ -1,19 +1,19 @@
 [[
-   "shexDoc",
+   "start",
   ["comment","# single line comment"]
 ],[
-   ["comment","shexDoc"],
+   "comment",
   ["comment","/* multi-line"]
 ],[
-   ["comment","shexDoc"],
+   "comment",
   ["comment"," * comment"]
 ],[
-   "shexDoc",
+   "start",
   ["comment"," */"]
 ],[
    "shexDoc"
 ],[
-   ["comment.doc","shexDoc"],
+   ["comment.doc1","shexDoc"],
   ["comment.doc","/** doc comment"]
 ],[
    "shexDoc",
@@ -26,68 +26,68 @@
   ["whiteSpace"," "],
   ["constant.library",":"],
   ["whiteSpace"," "],
-  ["constant.language","<ij>"],
+  ["constant.language.TODO","<ij>"],
   ["whiteSpace"," "],
   ["keyword","PREFIX"],
   ["whiteSpace"," "],
   ["constant.library","a:"],
   ["whiteSpace"," "],
-  ["constant.language","<kl>"]
+  ["constant.language.TODO","<kl>"]
 ],[
    "shexDoc",
   ["keyword","PREFIX"],
   ["whiteSpace"," "],
   ["constant.library","b:"],
   ["whiteSpace"," "],
-  ["constant.language","<ab%3Acd"],
-  ["constant.language.escape","\\u003A"],
-  ["constant.language","ef"],
-  ["constant.language.escape","\\U0000003A"],
-  ["constant.language","gh>"]
+  ["constant.language.TODO","<ab%3Acd"],
+  ["constant.language.TODO.escape","\\u003A"],
+  ["constant.language.TODO","ef"],
+  ["constant.language.TODO.escape","\\U0000003A"],
+  ["constant.language.TODO","gh>"]
 ],[
    "shexDoc",
   ["keyword","IMPORT"],
   ["whiteSpace"," "],
-  ["constant.language","<mn>"]
+  ["constant.language.TODO","<mn>"]
 ],[
    "shexDoc",
   ["keyword","BASE"],
   ["whiteSpace"," "],
-  ["constant.language","<op>"]
+  ["constant.language.TODO","<op>"]
 ],[
    "shexDoc"
 ],[
    ["#tmp","tripleExpression","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
   ["whiteSpace"," "],
-  ["constant.language.function.shapeExprLabel","<#S0%3A>"],
+  ["constant.language.shapeExprLabel","<#S0%3A>"],
   ["whiteSpace"," "],
   ["lcurly","{"]
 ],[
    ["#tmp","tripleExpression","shape","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
   ["whiteSpace","  "],
-  ["constant.library.atom.predicate","a.b:"],
-  ["variable.atom.predicate","p"],
-  ["variable.atom.predicate.escape","\\="],
-  ["variable.atom.predicate","1"],
+  ["constant.library.predicate","a.b:"],
+  ["variable.predicate","p"],
+  ["variable.predicate.escape","\\="],
+  ["variable.predicate","1"],
   ["whiteSpace"," "],
   ["lcurly","{"]
 ],[
    ["#tmp","tripleExpression","shape","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
   ["whiteSpace","    "],
   ["operator","$"],
-  ["constant.library.atom.tripleExprLabel","a:"],
-  ["variable.atom.tripleExprLabel","te1"],
+  ["constant.library.tripleExprLabel","a:"],
+  ["variable.tripleExprLabel","te1"],
   ["whiteSpace"," "],
-  ["constant.language.atom.predicate","<p>"],
+  ["constant.language.predicate","<p>"],
   ["whiteSpace"," "],
   ["lcurly","{"]
 ],[
    ["#tmp","xsFacetStar","litNodeConstraint","andOrOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
   ["whiteSpace","      "],
-  ["constant.library.atom.predicate","a:"],
+  ["constant.library.predicate","a:"],
   ["whiteSpace"," "],
-  ["constant.library.atom.datatype","xsd:"],
-  ["variable.atom.datatype","integer"],
+  ["constant.library.datatype","xsd:"],
+  ["variable.datatype","integer"],
   ["whiteSpace"," "],
   ["keyword","OR"],
   ["whiteSpace"," "],
@@ -107,11 +107,11 @@
   ["whiteSpace"," "],
   ["operator",";"]
 ],[
-   ["comment86","orOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
+   ["comment89","orOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
   ["whiteSpace"," "],
   ["comment","/* }      A multi-line comment doesn't"]
 ],[
-   ["comment86","orOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
+   ["comment89","orOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
   ["comment","    }      close this shape,"]
 ],[
    ["#tmp","orOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
@@ -123,10 +123,10 @@
 ],[
    ["#tmp","xsFacetStar","litNodeConstraint","andOrOpt","shapeNot","eachOneOpt","shape","nonLitNodeConstraintOpt","shapeNot","shexDoc"],
   ["whiteSpace","  "],
-  ["constant.library.atom.predicate",":"],
+  ["constant.library.predicate",":"],
   ["whiteSpace"," "],
-  ["constant.library.atom.datatype","a:"],
-  ["variable.atom.datatype","b"],
+  ["constant.library.datatype","a:"],
+  ["variable.datatype","b"],
   ["whiteSpace","  "],
   ["comment","# as seen by highlighting here"]
 ],[
@@ -140,18 +140,18 @@
   ["comment","# followingprefixed name:"]
 ],[
    ["nested_shapeNot","andOrOpt","shapeNot","shexDoc"],
-  ["constant.library.function.shapeExprLabel","a:"],
-  ["variable.function.shapeExprLabel","S1"],
+  ["constant.library.shapeExprLabel","a:"],
+  ["variable.shapeExprLabel","S1"],
   ["whiteSpace"," "],
   ["operator","@"],
-  ["constant.language.atom.shapeExprRef","<#S2>"],
+  ["constant.language.shapeExprRef","<#S2>"],
   ["whiteSpace"," "],
   ["keyword","AND"],
   ["whiteSpace"," "],
   ["lparen","("],
   ["operator","@"],
-  ["constant.library.atom.shapeExprRef","a:"],
-  ["variable.atom.shapeExprRef","S3"],
+  ["constant.library.shapeExprRef","a:"],
+  ["variable.shapeExprRef","S3"],
   ["whiteSpace"," "],
   ["keyword","OR"]
 ],[
@@ -160,7 +160,7 @@
   ["invalid","EXTENDS"],
   ["whiteSpace"," "],
   ["operator","@"],
-  ["constant.language.atom.shapeExprRef","<#S2>"],
+  ["constant.language.shapeExprRef","<#S2>"],
   ["whiteSpace"," "],
   ["invalid","EXTRA"],
   ["whiteSpace"," "],
@@ -192,18 +192,18 @@
    ["#tmp","orOpt","shape","nested_nonLitNodeConstraintOpt","nested_shapeNot","andOrOpt","shapeNot","shexDoc"],
   ["whiteSpace","      "],
   ["operator","&"],
-  ["constant.language.atom.tripleExprRef","<te1>"],
+  ["constant.language.tripleExprRef","<te1>"],
   ["whiteSpace"," "],
   ["operator",";"]
 ],[
    ["#tmp","nonLitNodeConstraintOpt","shapeNot","eachOneOpt","shape","nested_nonLitNodeConstraintOpt","nested_shapeNot","andOrOpt","shapeNot","shexDoc"],
   ["whiteSpace","      "],
-  ["constant.library.atom.predicate",":"],
-  ["variable.atom.predicate","p3"],
+  ["constant.library.predicate",":"],
+  ["variable.predicate","p3"],
   ["whiteSpace"," "],
   ["operator","@"],
-  ["constant.library.atom.shapeExprRef",":"],
-  ["variable.atom.shapeExprRef","S3"]
+  ["constant.library.shapeExprRef",":"],
+  ["variable.shapeExprRef","S3"]
 ],[
    ["#tmp","nested_xsFacetStar","nested_litNodeConstraint","nested_andOrOpt","nested_shapeNot","andOrOpt","shapeNot","shexDoc"],
   ["whiteSpace","    "],
@@ -211,8 +211,8 @@
   ["whiteSpace"," "],
   ["keyword","OR"],
   ["whiteSpace"," "],
-  ["constant.library.atom.datatype","xsd:"],
-  ["variable.atom.datatype","byte"],
+  ["constant.library.datatype","xsd:"],
+  ["variable.datatype","byte"],
   ["whiteSpace"," "],
   ["comment","/* OR . */"]
 ],[
